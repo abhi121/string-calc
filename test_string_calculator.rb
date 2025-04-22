@@ -9,4 +9,12 @@ class TestStringCalculator < Minitest::Test
     def test_return_zero_when_empty_string
         assert_equal 0, @calc.add("")
     end
+
+    def test_return_same_when_single_number
+        assert_equal 5, @calc.add("5")
+    end
+
+    def test_handles_sum_for_multiple_numbers
+        assert_equal 20, @calc.add("5,5,10")
+    end
 end
