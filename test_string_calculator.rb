@@ -25,4 +25,13 @@ class TestStringCalculator < Minitest::Test
     def test_handles_newline_and_commas_for_multiple_numbers
         assert_equal 6, @calc.add("1\n2,3")
     end
+
+    def test_handles_custom_delimiter
+        assert_equal 3, @calc.add("//;\n1;2")
+    end
+
+    def test_return_same_when_single_number_with_custom_delimiter
+        assert_equal 1, @calc.add("//;\n1")
+    end
+
 end
