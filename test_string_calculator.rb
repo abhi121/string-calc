@@ -17,4 +17,12 @@ class TestStringCalculator < Minitest::Test
     def test_handles_sum_for_multiple_numbers
         assert_equal 20, @calc.add("5,5,10")
     end
+
+    def test_handles_newline_for_multiple_numbers
+        assert_equal 20, @calc.add("5\n5\n10")
+    end
+
+    def test_handles_newline_and_commas_for_multiple_numbers
+        assert_equal 6, @calc.add("1\n2,3")
+    end
 end
